@@ -22,6 +22,7 @@ namespace loginWhitSql.PL_presentacion__
         {
             oEmpleadosDal = new EmpleadosDal();
             InitializeComponent();
+            this.Text = "Empleados";
             llenarGrilla();
             Limpiar();
             btnInicio();
@@ -117,9 +118,9 @@ namespace loginWhitSql.PL_presentacion__
             dgvEmpleados.DataSource = oEmpleadosDal.MostrarEmpleados().Tables[0];
 
             dgvEmpleados.Columns[0].HeaderText = "Id";
-            dgvEmpleados.Columns[1].HeaderText = "Nombre";
-            dgvEmpleados.Columns[2].HeaderText = "Primer Ape";
-            dgvEmpleados.Columns[3].HeaderText = "Segundo Ape";
+            dgvEmpleados.Columns[1].HeaderText = "Nombre y Apellido";
+            dgvEmpleados.Columns[2].HeaderText = "Ingreso";
+            dgvEmpleados.Columns[3].HeaderText = "Actividad";
             dgvEmpleados.Columns[4].HeaderText = "Correo";
             dgvEmpleados.Columns[5].HeaderText = "Foto";
 
@@ -141,10 +142,10 @@ namespace loginWhitSql.PL_presentacion__
 
                     dgvEmpleados.Columns[0].HeaderText = "Id";
                     dgvEmpleados.Columns[1].HeaderText = "Nombre";
-                    dgvEmpleados.Columns[2].HeaderText = "Primer Ape";
-                    dgvEmpleados.Columns[3].HeaderText = "Segundo Ape";
+                    dgvEmpleados.Columns[2].HeaderText = "Apellido";
+                    dgvEmpleados.Columns[3].HeaderText = "Tarea";
                     dgvEmpleados.Columns[4].HeaderText = "Correo";
-                    dgvEmpleados.Columns[5].HeaderText = "Foto";
+                    dgvEmpleados.Columns[5].HeaderText = "Departamento";
                     try
                     {
                         byte[] imageBytes = ds.Tables[0].Rows[0]["Foto"] as byte[];
@@ -198,9 +199,25 @@ namespace loginWhitSql.PL_presentacion__
             txtPrimerApellido.Text = dgvEmpleados.Rows[indice1].Cells[2].Value.ToString();
             txtSengundoApellid.Text = dgvEmpleados.Rows[indice1].Cells[3].Value.ToString();
             txtCorreo.Text = dgvEmpleados.Rows[indice1].Cells[4].Value.ToString();
+
+                byte[] imgBytes = (byte[])dgvEmpleados.Rows[indice1].Cells[5].Value;
+
+                if (imgBytes != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(imgBytes))
+                    {
+                        picFoto.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    picFoto.Image = null; // Si no hay imagen, limpia el PictureBox
+                }
+
             }
 
             btnModificar.Enabled = true;
+            btnBorrar.Enabled = true;   
         }
 
         public void Limpiar()

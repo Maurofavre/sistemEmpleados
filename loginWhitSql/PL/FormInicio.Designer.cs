@@ -59,6 +59,7 @@
             this.ClientSize = new System.Drawing.Size(811, 585);
             this.Controls.Add(this.progresBar);
             this.Name = "FormInicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInicio";
             this.ResumeLayout(false);
 

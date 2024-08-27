@@ -23,6 +23,7 @@ namespace loginWhitSql.PL_presentacion__
         {
             oDepartamentosDLL = new DepartamentosDLL();
             InitializeComponent();
+            this.Text = "Departamentos";
             //Llenar la tabla con los datos de la bd 
             LlenarGrid();
 

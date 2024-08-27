@@ -167,6 +167,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmDepartamentos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDepartamentos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).EndInit();
             this.ResumeLayout(false);

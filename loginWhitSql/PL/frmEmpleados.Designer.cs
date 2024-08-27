@@ -76,27 +76,27 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(422, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre y Apellido";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(277, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Primer Apellido";
+            this.label3.Text = "Ingreso";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(422, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 13);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Segundo Apellido";
+            this.label4.Text = "Actividad";
             // 
             // label5
             // 
@@ -283,6 +283,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picFoto);
             this.Name = "frmEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmpleados";
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();

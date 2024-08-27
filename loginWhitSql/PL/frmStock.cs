@@ -24,6 +24,7 @@ namespace loginWhitSql.PL
         {
             oStock = new StockDAL();
             InitializeComponent();
+            this.Text = "Stock";
             llenarGrilla();
             btnInicio();
         }
@@ -225,13 +226,27 @@ namespace loginWhitSql.PL
                 txtPrecio.Text = dgvStock.Rows[indice1].Cells[2].Value.ToString();
                 txtCant.Text = dgvStock.Rows[indice1].Cells[3].Value.ToString();
 
-                btnAgregar.Enabled = false;
-                btnBorrar.Enabled = true;
-                btnModificar.Enabled = true;
-                btnCancelar.Enabled = true;
+                byte[] imgBytes = (byte[])dgvStock.Rows[indice1].Cells[4].Value;
+
+                if (imgBytes != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(imgBytes))
+                    {
+                        fotoStock.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    fotoStock.Image = null; // Si no hay imagen, limpia el PictureBox
+                }
 
             }
-        }
+
+            btnModificar.Enabled = true;
+            btnBorrar.Enabled = true;
+
+            }
+        
 
         private void frmStock_Load(object sender, EventArgs e)
         {

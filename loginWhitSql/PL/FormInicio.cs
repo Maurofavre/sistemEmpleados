@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace loginWhitSql.PL
         public FormInicio()
         {
             InitializeComponent();
+            this.Text = "Inicio";
 
             progresBar.Maximum = 100;
             progresBar.Minimum = 0;
@@ -27,6 +29,7 @@ namespace loginWhitSql.PL
             timer.Interval = 40; // 4000 milisegundos = 4 segundos
             timer.Tick += timerTick;
             timer.Start();
+
         }
 
         private void timerTick(object sender, EventArgs e)

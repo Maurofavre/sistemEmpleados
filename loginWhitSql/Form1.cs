@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,11 @@ namespace loginWhitSql
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Gestion";
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = @"C:\Users\mauro\source\repos\sistemaEmpleados-master\sonidos\fom1.wav";
+            
+            player.Play();
         }
 
         private void btnDpto_Click(object sender, EventArgs e)
