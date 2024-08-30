@@ -13,11 +13,8 @@ namespace loginWhitSql.DAL_acceso_a_datos_
     {
         // cadena de mysql para conectarse
         private string CadenaConexion = "Server=localhost;Port=3306;Database=dbsistema;User Id=root;Password=;";
-
         //crea un objeto para manejar la conexión a la base de datos.
         MySqlConnection conexion;
-
-
 
         //Inicializa el objeto de conexión (conexion) 
         //usando la cadena de conexión (CadenaConexion) y lo retorna.
@@ -33,26 +30,20 @@ namespace loginWhitSql.DAL_acceso_a_datos_
 
         }
 
-
-
-
         //Metodo INSERT, DELET, UPDATE
         public bool ejecutarComandosSinRetornos(string strComando)
         {
             try
             {
-
                 // Comando para poder hacer consultas 
                 MySqlCommand comando = new MySqlCommand();
 
                 comando.CommandText = strComando;
                 comando.Connection = this.EstablecerConexion();
-
-
+                
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
-
                 return true;
             }
             catch
@@ -61,10 +52,8 @@ namespace loginWhitSql.DAL_acceso_a_datos_
             }
 
         }
-
         //sobreCarga para pasarle argumento diferente 
-
-        public bool ejecutarComandosSinRetornos(MySqlCommand SqlComando)
+     public bool ejecutarComandosSinRetornos(MySqlCommand SqlComando)
         {
             try
             {
@@ -86,10 +75,7 @@ namespace loginWhitSql.DAL_acceso_a_datos_
             {
                 return false;
             }
-
         }
-
-
 
         //Retornos de datos SELECT
         public DataSet EjecutarSentencia(MySqlCommand mySqlComando)
@@ -115,12 +101,6 @@ namespace loginWhitSql.DAL_acceso_a_datos_
                 return ds;
                 
             }
-
-
         }
-
     }
-
-
-
 }
