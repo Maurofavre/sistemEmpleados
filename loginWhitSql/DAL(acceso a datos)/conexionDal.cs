@@ -19,15 +19,11 @@ namespace loginWhitSql.DAL_acceso_a_datos_
         //Inicializa el objeto de conexión (conexion) 
         //usando la cadena de conexión (CadenaConexion) y lo retorna.
         public MySqlConnection EstablecerConexion() {
-
             //ya lo tenes declarado al objeto asique ponemos This
             //crear una conexion con sql conexion
             //asiganmos la instancia al objeto
-
             this.conexion = new MySqlConnection(this.CadenaConexion);
-
             return this.conexion;
-
         }
 
         //Metodo INSERT, DELET, UPDATE
@@ -37,10 +33,8 @@ namespace loginWhitSql.DAL_acceso_a_datos_
             {
                 // Comando para poder hacer consultas 
                 MySqlCommand comando = new MySqlCommand();
-
                 comando.CommandText = strComando;
                 comando.Connection = this.EstablecerConexion();
-                
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
@@ -57,14 +51,9 @@ namespace loginWhitSql.DAL_acceso_a_datos_
         {
             try
             {
-
                 // Comando para poder hacer consultas 
                 MySqlCommand comando = SqlComando;
-
-                
                 comando.Connection = this.EstablecerConexion();
-
-
                 conexion.Open();
                 comando.ExecuteNonQuery();
                 conexion.Close();
